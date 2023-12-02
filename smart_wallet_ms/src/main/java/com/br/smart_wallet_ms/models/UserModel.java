@@ -4,10 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 @Entity
-@Table(name = "User")
+@Table(name = "Users")
 @Getter
 @Setter
 @Builder
@@ -19,16 +18,9 @@ public class UserModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "profilePicture")
     private String profilePicture;
+    private boolean active;
 }
